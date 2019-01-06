@@ -1,0 +1,42 @@
+<%= form_with(model: cluster, local: true) do |form| %>
+  <% if cluster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cluster.errors.count, "error") %> prohibited this cluster from being saved:</h2>
+
+      <ul>
+      <% cluster.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :clustername %>
+    <%= form.text_field :clustername %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clusterendpoints %>
+    <%= form.text_area :clusterendpoints %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clusterstatus %>
+    <%= form.text_field :clusterstatus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clusterusername %>
+    <%= form.text_field :clusterusername %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clusterpassword %>
+    <%= form.text_field :clusterpassword %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ccnumber:</strong>
+  <%= @cc.ccnumber %>
+</p>
+
+<p>
+  <strong>Ccname:</strong>
+  <%= @cc.ccname %>
+</p>
+
+<p>
+  <strong>Ccexp:</strong>
+  <%= @cc.ccexp %>
+</p>
+
+<p>
+  <strong>Ccv:</strong>
+  <%= @cc.ccv %>
+</p>
+
+<%= link_to 'Edit', edit_cc_path(@cc) %> |
+<%= link_to 'Back', ccs_path %>

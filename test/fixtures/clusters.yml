@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clustername: MyString
+  clusterendpoints: MyText
+  clusterstatus: MyString
+  clusterusername: MyString
+  clusterpassword: MyString
+
+two:
+  clustername: MyString
+  clusterendpoints: MyText
+  clusterstatus: MyString
+  clusterusername: MyString
+  clusterpassword: MyString

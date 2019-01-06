@@ -1,0 +1,37 @@
+<%= form_with(model: cc, local: true) do |form| %>
+  <% if cc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cc.errors.count, "error") %> prohibited this cc from being saved:</h2>
+
+      <ul>
+      <% cc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ccnumber %>
+    <%= form.text_field :ccnumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ccname %>
+    <%= form.text_field :ccname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ccexp %>
+    <%= form.text_field :ccexp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ccv %>
+    <%= form.number_field :ccv %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

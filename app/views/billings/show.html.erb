@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @billing.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @billing.lastname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @billing.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @billing.phone %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @billing.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @billing.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @billing.country %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @billing.email %>
+</p>
+
+<%= link_to 'Edit', edit_billing_path(@billing) %> |
+<%= link_to 'Back', billings_path %>

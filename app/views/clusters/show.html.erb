@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clustername:</strong>
+  <%= @cluster.clustername %>
+</p>
+
+<p>
+  <strong>Clusterendpoints:</strong>
+  <%= @cluster.clusterendpoints %>
+</p>
+
+<p>
+  <strong>Clusterstatus:</strong>
+  <%= @cluster.clusterstatus %>
+</p>
+
+<p>
+  <strong>Clusterusername:</strong>
+  <%= @cluster.clusterusername %>
+</p>
+
+<p>
+  <strong>Clusterpassword:</strong>
+  <%= @cluster.clusterpassword %>
+</p>
+
+<%= link_to 'Edit', edit_cluster_path(@cluster) %> |
+<%= link_to 'Back', clusters_path %>

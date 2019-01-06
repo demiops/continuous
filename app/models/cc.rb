@@ -1,0 +1,2 @@
+class Cc < ApplicationRecord
+end
