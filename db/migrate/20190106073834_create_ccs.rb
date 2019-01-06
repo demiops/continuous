@@ -5,7 +5,7 @@ class CreateCcs < ActiveRecord::Migration[5.2]
       t.string :ccname
       t.string :ccexp
       t.integer :ccv
-
+      t.belongs_to :account, index: true
       t.timestamps
     end
   end

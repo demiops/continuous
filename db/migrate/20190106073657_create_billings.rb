@@ -9,7 +9,7 @@ class CreateBillings < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :country
       t.string :email
-
+      t.belongs_to :account, index: true
       t.timestamps
     end
   end

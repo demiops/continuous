@@ -6,6 +6,7 @@ class CreateCredentials < ActiveRecord::Migration[5.2]
       t.text :cloudtoken
       t.string :cloudtype
       t.text :clouddata
+      t.belongs_to :account, index: true
 
       t.timestamps
     end

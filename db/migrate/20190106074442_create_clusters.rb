@@ -6,6 +6,7 @@ class CreateClusters < ActiveRecord::Migration[5.2]
       t.string :clusterstatus
       t.string :clusterusername
       t.string :clusterpassword
+      t.belongs_to :account, index: true
 
       t.timestamps
     end
