@@ -11,32 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :clustername %>
-    <%= form.text_field :clustername %>
+  <div class="form-group row">
+    <%= form.label :clustername, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+    <%= form.text_field :clustername, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :clusterendpoints %>
-    <%= form.text_area :clusterendpoints %>
+  <div class="form-group row">
+    <%= form.label :clusterendpoints, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+    <%= form.text_area :clusterendpoints, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :clusterstatus %>
-    <%= form.text_field :clusterstatus %>
+  <div class="form-group row">
+    <%= form.label :clusterstatus, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+    <%= form.text_field :clusterstatus, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :clusterusername %>
-    <%= form.text_field :clusterusername %>
+  <div class="form-group row">
+    <%= form.label :clusterusername, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+    <%= form.text_field :clusterusername, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :clusterpassword %>
-    <%= form.text_field :clusterpassword %>
+  <div class="form-group row">
+    <%= form.label :clusterpassword, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+    <%= form.text_field :clusterpassword, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: 'btn btn-primary' %>
   </div>
 <% end %>

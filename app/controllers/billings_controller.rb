@@ -1,10 +1,10 @@
 class BillingsController < ApplicationController
   before_action :set_billing, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_account!
   # GET /billings
   # GET /billings.json
   def index
-    @billings = Billing.all
+    @billings = current_account.billings
   end
 
   # GET /billings/1
@@ -25,7 +25,7 @@ class BillingsController < ApplicationController
   # POST /billings.json
   def create
     @billing = Billing.new(billing_params)
-
+    @billing.account = current_account
     respond_to do |format|
       if @billing.save
         format.html { redirect_to @billing, notice: 'Billing was successfully created.' }

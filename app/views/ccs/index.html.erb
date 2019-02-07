@@ -1,14 +1,12 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Ccs</h1>
+<h1>Credit Cards</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Ccnumber</th>
-      <th>Ccname</th>
-      <th>Ccexp</th>
-      <th>Ccv</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +15,7 @@
     <% @ccs.each do |cc| %>
       <tr>
         <td><%= cc.ccnumber %></td>
-        <td><%= cc.ccname %></td>
-        <td><%= cc.ccexp %></td>
-        <td><%= cc.ccv %></td>
         <td><%= link_to 'Show', cc %></td>
-        <td><%= link_to 'Edit', edit_cc_path(cc) %></td>
         <td><%= link_to 'Destroy', cc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -31,3 +25,4 @@
 <br>
 
 <%= link_to 'New Cc', new_cc_path %>
+</div>

@@ -1,10 +1,10 @@
 class CcsController < ApplicationController
   before_action :set_cc, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_account!
   # GET /ccs
   # GET /ccs.json
   def index
-    @ccs = Cc.all
+    @ccs = current_account.ccs
   end
 
   # GET /ccs/1
@@ -25,7 +25,7 @@ class CcsController < ApplicationController
   # POST /ccs.json
   def create
     @cc = Cc.new(cc_params)
-
+    @cc.account = current_account
     respond_to do |format|
       if @cc.save
         format.html { redirect_to @cc, notice: 'Cc was successfully created.' }

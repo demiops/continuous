@@ -1,10 +1,11 @@
 class CredentialsController < ApplicationController
   before_action :set_credential, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_account!
 
   # GET /credentials
   # GET /credentials.json
   def index
-    @credentials = Credential.all
+    @credentials = current_account.credentials
   end
 
   # GET /credentials/1
@@ -25,7 +26,7 @@ class CredentialsController < ApplicationController
   # POST /credentials.json
   def create
     @credential = Credential.new(credential_params)
-
+    @credential.account = current_account
     respond_to do |format|
       if @credential.save
         format.html { redirect_to @credential, notice: 'Credential was successfully created.' }

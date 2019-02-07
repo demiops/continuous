@@ -1,10 +1,10 @@
 class ClustersController < ApplicationController
   before_action :set_cluster, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_account!
   # GET /clusters
   # GET /clusters.json
   def index
-    @clusters = Cluster.all
+    @clusters = current_account.clusters
   end
 
   # GET /clusters/1
@@ -25,9 +25,10 @@ class ClustersController < ApplicationController
   # POST /clusters.json
   def create
     @cluster = Cluster.new(cluster_params)
-
+    @cluster.account = current_account
     respond_to do |format|
       if @cluster.save
+        CreateClusterJob.perform_later(@cluster)
         format.html { redirect_to @cluster, notice: 'Cluster was successfully created.' }
         format.json { render :show, status: :created, location: @cluster }
       else
@@ -54,9 +55,12 @@ class ClustersController < ApplicationController
   # DELETE /clusters/1
   # DELETE /clusters/1.json
   def destroy
-    @cluster.destroy
+    @cluster.clusterstatus = "Destroying"
+    @cluster.save
+    DeleteClusterJob.perform_later(@cluster)
+    #@cluster.destroy
     respond_to do |format|
-      format.html { redirect_to clusters_url, notice: 'Cluster was successfully destroyed.' }
+      format.html { redirect_to clusters_url, notice: 'Cluster is getting destroyed.' }
       format.json { head :no_content }
     end
   end

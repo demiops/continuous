@@ -11,27 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :ccnumber %>
-    <%= form.text_field :ccnumber %>
+  <div class="form-group row">
+    <%= form.label :ccnumber, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+    <%= form.text_field :ccnumber, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :ccname %>
-    <%= form.text_field :ccname %>
+  <div class="form-group row">
+    <%= form.label :ccname, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+    <%= form.text_field :ccname, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :ccexp %>
-    <%= form.text_field :ccexp %>
+  <div class="form-group row">
+    <%= form.label :ccexp, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+    <%= form.text_field :ccexp, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :ccv %>
-    <%= form.number_field :ccv %>
+  <div class="form-group row">
+    <%= form.label :ccv, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+    <%= form.number_field :ccv, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: 'btn btn-primary' %>
   </div>
 <% end %>
